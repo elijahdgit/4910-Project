@@ -52,7 +52,6 @@ if ($stmt = $mysqli->prepare("{$tempStmt1}")) {
             $stmt->bind_param('ssssssssss', $rand, $_POST['username'], $password, $_POST['email'], $_POST['phone'],
                 $_POST['sponsorEmail'], $x, $_POST['driverLicense'], $_POST['status'], $_POST['time']);
             $stmt->execute();
-            printf("Error: %s.\n", $stmt->error);
 
             echo 'You have successfully registered, you can now login!<br><a href="login.html">Login</a>';
         } else {
