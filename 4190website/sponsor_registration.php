@@ -2,9 +2,9 @@
 /**
  * Created by PhpStorm.
  * User: elijah
- * Date: 2019-02-28
- * Time: 16:23
- */
+ * Date: 2019-03-01
+ * Time: 08:48
+**/
 
 // Change this to your connection info.
 $DB_HOST = 'project-4910.cnt6obvbfmv5.us-east-1.rds.amazonaws.com';
@@ -22,23 +22,13 @@ die ('Failed to connect to MySQL: ' . $mysqli->connect_errno);
 // Now we check if the data was submitted, isset will check if the data exists.
 if (!isset($_POST['username'], $_POST['password'], $_POST['email'])) {
 // Could not get the data that should have been sent.
-die ('Please complete the registration form!<br><a href="register.html">Back</a>');
+die ('Please complete the registration form!<br><a href="sponsor_registration.html">Back</a>');
 }
 
-$radio = $_POST['class'];
-$tempStmt = '';
-$tempStmt2 = '';
+$rand = rand(1, 500000);
 
-if($radio == "driver") {
-    $tempStmt1 = 'SELECT driverID, driverPassword FROM Driver WHERE driverName = ?';
-    $tempStmt2 = 'INSERT INTO Driver (driverName, driverPassword, driverEmail) VALUES (?, ?, ?)';
-} else if ($radio == "sponsor") {
-    $tempStmt1 = 'SELECT sponsorID, sponsorPassword FROM Sponsor WHERE sponsorName = ?';
-    $tempStmt2 = 'INSERT INTO Sponsor (sponsorName, sponsorPassword, sponsorEmail) VALUES (?, ?, ?)';
-} else if($radio == "admin") {
-    $tempStmt1 = 'SELECT adminID, adminPassword FROM Admin WHERE adminName = ?';
-    $tempStmt2 = 'INSERT INTO Admin (adminName, adminPassword, adminEmail, adminPhone, adminStatus) VALUES (?, ?, ?)';
-}
+$tempStmt1 = 'SELECT sponsorID, sponsorPassword FROM Sponsor WHERE sponsorName = ?';
+$tempStmt2 = 'INSERT INTO Sponsor (sponsorID, sponsorName, sponsorPassword, sponsorEmail, sponsorPhone, sponsorStatus, adminEmail) VALUES (?, ?, ?, ?, ?, ?, ?)';
 
 // We need to check if the account with that username exists
 if ($stmt = $mysqli->prepare("{$tempStmt1}")) {
@@ -51,18 +41,20 @@ $stmt->store_result();
 // Store the result so we can check if the account exists in the database.
 if ($stmt->num_rows > 0) {
 // Username already exists
-echo 'Username exists, please choose another!<br><a href="register.html">Back</a>';
+echo 'Username exists, please choose another!<br><a href="admin_registration.html">Back</a>';
 } else {
 // Username doesnt exists, insert new account
 if ($stmt = $mysqli->prepare("{$tempStmt2}")) {
 
 // We do not want to expose passwords in our database, so hash the password and use password_verify when a user logs in.
-$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-$stmt->bind_param('sss', $_POST['username'], $password, $_POST['email']);
+//$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $password = $_POST['password'];
+$stmt->bind_param('sssssss', $rand, $_POST['username'], $password, $_POST['email'], $_POST['phone'],
+    $_POST['status'], $_POST['adminEmail']);
 $stmt->execute();
 printf("Error: %s.\n", $stmt->error);
 
-echo 'You have successfully registered, you can now login!<br><a href="index.html">Login</a>';
+echo 'You have successfully registered, you can now login!<br><a href="login.html">Login</a>';
 } else {
 echo 'Could not prepare statement2!';
 }
