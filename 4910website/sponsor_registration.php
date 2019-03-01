@@ -47,8 +47,7 @@ echo 'Username exists, please choose another!<br><a href="admin_registration.htm
 if ($stmt = $mysqli->prepare("{$tempStmt2}")) {
 
 // We do not want to expose passwords in our database, so hash the password and use password_verify when a user logs in.
-//$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    $password = $_POST['password'];
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 $stmt->bind_param('sssssss', $rand, $_POST['username'], $password, $_POST['email'], $_POST['phone'],
     $_POST['status'], $_POST['adminEmail']);
 $stmt->execute();

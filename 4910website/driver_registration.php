@@ -49,8 +49,7 @@ if ($stmt = $mysqli->prepare("{$tempStmt1}")) {
         if ($stmt = $mysqli->prepare("{$tempStmt2}")) {
 
 // We do not want to expose passwords in our database, so hash the password and use password_verify when a user logs in.
-            //$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-            $password = $_POST['password'];
+            $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
             $stmt->bind_param('ssssssssss', $rand, $_POST['username'], $password, $_POST['email'], $_POST['phone'],
                 $_POST['sponsorEmail'], $x, $_POST['driverLicense'], $_POST['status'], $_POST['time']);
             $stmt->execute();
