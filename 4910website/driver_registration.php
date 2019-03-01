@@ -6,7 +6,6 @@
  * Time: 16:23
  */
 
-// Change this to your connection info.
 $DB_HOST = 'project-4910.cnt6obvbfmv5.us-east-1.rds.amazonaws.com';
 $DB_USER = 'bwindha';
 $DB_PASS = 'ourdb4910$';
