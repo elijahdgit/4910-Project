@@ -49,7 +49,16 @@ if ($stmt = $con->prepare("{$tempStmt}")) {
 			$_SESSION['loggedin'] = TRUE;
 			$_SESSION['name'] = $_POST['username'];
 			$_SESSION['id'] = $id;
-			echo 'Welcome ' . $_SESSION['name'] . '!';
+
+			if($radio == "driver") {
+				$_SESSION['type'] = 'driver';
+			} else if ($radio == "sponsor") {
+				$_SESSION[''] = 'sponsor';
+			} else if($radio == "admin") {
+				$_SESSION['admin'] = 'admin';
+			}
+			//echo 'Welcome ' . $_SESSION['name'] . '!';
+			header('Location: http://ec2-18-207-218-17.compute-1.amazonaws.com/profile/homepage.html');
 		} else {
 			echo 'Incorrect username and/or password1!';
 		}

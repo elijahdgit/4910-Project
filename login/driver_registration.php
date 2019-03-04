@@ -23,8 +23,8 @@ if (!isset($_POST['username'], $_POST['password'], $_POST['email'])) {
 // Could not get the data that should have been sent.
     die ('Please complete the registration form!<br><a href="driver_registration.html">Back</a>');
 }
-
 $rand = rand(1, 500000);
+
 $x = 0;
 
 $tempStmt1 = 'SELECT driverID, driverPassword FROM Driver WHERE driverName = ?';
