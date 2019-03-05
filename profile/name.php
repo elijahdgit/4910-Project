@@ -11,7 +11,7 @@
   <div class="w3-bar w3-border w3-light-grey">
     <a href="homepage.html" class="w3-bar-item w3-button">Home</a>
     <a href="#" class="w3-bar-item w3-button">Link 1</a>
-    <a href="#" class="w3-bar-item w3-button">Link 2</a>
+    <a href="faq.html" class="w3-bar-item w3-button">FAQ</a>
     <a href="home.html" class="w3-bar-item w3-button w3-black w3-right">login</a>
   </div>
 </div>
@@ -26,22 +26,22 @@
 </tr>
 <tr>
 	<td>change Username<br>
-    <INPUT style='width:99%' TYPE='Text' Name=penname maxlength=30  size=35 required class='penname' title="Valid characters: A-Z a-z 0-9 . ' -" >
+    <INPUT style='width:99%' TYPE='Text' Name=penname maxlength=30  size=35 required class='penname' title="Valid characters: A-Z a-z 0-9 . ' -"  placeholder="new Username">
     </td>
 </tr>
 <tr>
 	<td>change password<br>
-    <INPUT style='width:99%' TYPE='Text' Name=penname maxlength=30  size=35 required class='penname' title="Valid characters: A-Z a-z 0-9 . ' -" >
+    <INPUT style='width:99%' TYPE='Text' Name=password maxlength=30  size=35 required class='penname' title="Valid characters: A-Z a-z 0-9 . ' -"  placeholder="new Password">
     </td>
 </tr>
 <tr>
 	<td>change email<br>
-    <INPUT style='width:99%' TYPE='Text' Name=penname maxlength=30  size=35 required class='penname' title="Valid characters: A-Z a-z 0-9 . ' -" >
+    <INPUT style='width:99%' TYPE='Text' Name=email maxlength=30  size=35 required class='penname' title="Valid characters: A-Z a-z 0-9 . ' -"  placeholder="new email">
     </td>
 </tr>
 <tr>
 	<td>change address<br>
-    <INPUT style='width:99%' TYPE='Text' Name=penname maxlength=30  size=35 required class='penname' title="Valid characters: A-Z a-z 0-9 . ' -" placeholder="Current Password">
+    <INPUT style='width:99%' TYPE='Text' Name=address maxlength=30  size=35 required class='penname' title="Valid characters: A-Z a-z 0-9 . ' -" placeholder="new address">
 		</td>
 </tr>
 
