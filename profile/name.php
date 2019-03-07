@@ -1,4 +1,20 @@
-<!DOCTYPE html>
+<?php
+$DB_HOST = 'project-4910.cnt6obvbfmv5.us-east-1.rds.amazonaws.com';
+$DB_USER = 'bwindha';
+$DB_PASS = 'ourdb4910$';
+$DB_NAME = 'db4910';
+// Create connection
+$conn = mysqli_connect($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+$sql = "SELECT driverName, driverEmail, driverPhone, driverPoints, sponsorEmail, driverLicense, driverStatus FROM Driver";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($result);
+mysqli_close($conn);
+?>
+
 <html>
 <head>
 <meta charset="ISO-8859-1">
