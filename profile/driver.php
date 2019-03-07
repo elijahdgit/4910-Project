@@ -64,10 +64,6 @@ mysqli_close($conn);
                    <td><?php echo $row['driverPoints']?></td>
                </tr>
                <tr>
-                   <td>Sponsor Email</td>
-                   <td><?php echo $row['sponsorEmail']?></td>
-               </tr>
-               <tr>
                    <td>Driver License</td>
                    <td><?php echo $row['driverLicense']?></td>
                </tr>
@@ -76,6 +72,17 @@ mysqli_close($conn);
                    <td><?php echo $row['driverStatus']?></td>
                </tr>
             </table>
+        </div>
+        <div class="container-fluid">
+            <table style="width:90%">
+                 <tr>
+                   <td>Sponsor Name</td>
+                   <td><?php echo $row['sponsorEmail']?></td>
+               </tr>
+                 <tr>
+                   <td>Sponsor Email</td>
+                   <td><?php echo $row['sponsorEmail']?></td>
+               </tr>
         </div>
     <form action="/edit.php" method="get">
         <button name="edit" type="submit" value="HTML">edit</button>
