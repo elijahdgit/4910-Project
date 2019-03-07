@@ -26,10 +26,10 @@ if($_SESSION['radio'] == 'driver') {
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">GoodDriver</a>
+            <a class="navbar-brand" href="<?php echo $link_address;?>">GoodDriver</a>
         </div>
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+            <li class="active"><a href="faq.html">Faq</a></li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
@@ -39,8 +39,7 @@ if($_SESSION['radio'] == 'driver') {
 </nav>
 
 <div class="container">
-    <h3>Basic Navbar Example</h3>
-    <p>A navigation bar is a navigation header that is placed at the top of the page.</p>
+    <p>Generic information about the app</p>
 </div>
 
 </body>
