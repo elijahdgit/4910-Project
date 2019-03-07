@@ -37,7 +37,7 @@ mysqli_close($conn);
                     <a class="navbar-brand" href="http://ec2-18-207-218-17.compute-1.amazonaws.com/profile/homepage.php">GoodDriver</a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
+                    <li class="active"><a href="homepage.html">Home</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
