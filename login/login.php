@@ -13,7 +13,7 @@ $DB_NAME = 'db4910';
 $radio = $_POST['radio'];
 
 // Try and connect using the info above.
-$con = mysqli_connect($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
+$conn = mysqli_connect($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
 if ( mysqli_connect_errno() ) {
 	// If there is an error with the connection, stop the script and display the error.
 	die ('Failed to connect to MySQL: ' . mysqli_connect_error());
@@ -33,7 +33,7 @@ if($radio == "driver") {
 }
 
 // Prepare our SQL
-if ($stmt = $con->prepare("{$tempStmt}")) {
+if ($stmt = $conn->prepare("{$tempStmt}")) {
 	// Bind parameters (s = string, i = int, b = blob, etc), hash the password using the PHP password_hash function.
 	$stmt->bind_param('s', $_POST['username']);
 	$stmt->execute();
@@ -49,16 +49,10 @@ if ($stmt = $con->prepare("{$tempStmt}")) {
 			$_SESSION['loggedin'] = TRUE;
 			$_SESSION['name'] = $_POST['username'];
 			$_SESSION['id'] = $id;
+			$_SESSION['radio'] = $radio;
 
-			if($radio == "driver") {
-				$_SESSION['type'] = 'driver';
-			} else if ($radio == "sponsor") {
-				$_SESSION[''] = 'sponsor';
-			} else if($radio == "admin") {
-				$_SESSION['admin'] = 'admin';
-			}
 			//echo 'Welcome ' . $_SESSION['name'] . '!';
-			header('Location: http://ec2-18-207-218-17.compute-1.amazonaws.com/profile/homepage.html');
+			header('Location: http://ec2-18-207-218-17.compute-1.amazonaws.com/profile/user_homepage.php');
 		} else {
 			echo 'Incorrect username and/or password1!';
 		}

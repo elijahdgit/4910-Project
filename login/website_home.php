@@ -51,26 +51,33 @@
         </div>
 
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="http://ec2-18-207-218-17.compute-1.amazonaws.com/login/home.html"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+            <li><a href="http://ec2-18-207-218-17.compute-1.amazonaws.com/login/registration_options.html"><span class="glyphicon glyphicon-user"></span> Register</a></li>
         </ul>
     </div>
 </nav>
 
 <div class="container-fluid">
     <h2 style="text-align: center">Login</h2>
-    <form action="/action_page.php">
+    <form action="login.php" method="post">
         <div class="login-form">
-            <label for="email">Email:</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+            <label for="username">Email:</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter username" name="username">
         </div>
         <div class="login-form">
-            <label for="pwd">Password:</label>
-            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
+        </div>
+        <div class="login-form">
+            <input type="radio" name="radio" value="driver" required> Driver<br>
+            <input type="radio" name="radio" value="sponsor" required> Sponsor<br>
+            <input type="radio" name="radio" value="admin" required> Admin<br>
         </div>
         <div class="login-form">
             <label><input type="checkbox" name="remember"> Remember me</label>
         </div>
-        <div class="button"><button type="submit" class="btn btn-default">Submit</button></div>
+        <div class="button">
+            <button type="submit" class="btn btn-default">Submit</button>
+        </div>
     </form>
 </div>
 

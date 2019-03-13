@@ -25,7 +25,7 @@ mysqli_close($conn);
 
 <div class="w3-top">
   <div class="w3-bar w3-border w3-light-grey">
-    <a href="homepage.html" class="w3-bar-item w3-button">Home</a>
+    <a href="user_homepage.html" class="w3-bar-item w3-button">Home</a>
     <a href="#" class="w3-bar-item w3-button">Link 1</a>
     <a href="faq.html" class="w3-bar-item w3-button">FAQ</a>
     <a href="home.html" class="w3-bar-item w3-button w3-black w3-right">login</a>
